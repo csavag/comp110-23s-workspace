@@ -31,7 +31,7 @@ def emojified(guess: str, secret: str) -> str:
 
 
 def input_guess(expected_length: int) -> str:
-    """"Gets user guess or something."""
+    """Gets user guess or something."""
     inp: str = input(f"Enter a {expected_length} character word: ")
     while len(inp) != expected_length:
         inp = input(f"That wasn't {expected_length} chars! Try again. ")
@@ -55,6 +55,6 @@ def main() -> None:
             print("X/6 - Sorry, try again tomorrow!")
             running = False
     
-    
+
 if __name__ == "__main__":
     main()
