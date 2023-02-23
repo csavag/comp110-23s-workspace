@@ -2,7 +2,7 @@
 __author__ = "730552002"
 
 
-def all(listy: list, checker: int) -> bool:
+def all(listy: list[int], checker: int) -> bool:
     """Are all the list items equal to the integer."""
     n = 0
     if len(listy) == 0:
