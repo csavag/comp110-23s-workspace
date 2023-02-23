@@ -3,7 +3,10 @@ __author__ = "730552002"
 
 
 def all(listy: list, checker: int) -> bool:
+    """Are all the list items equal to the integer."""
     n = 0
+    if len(listy) == 0:
+        return False
     while n < len(listy):
         if listy[n] != checker:
             return False
@@ -12,6 +15,7 @@ def all(listy: list, checker: int) -> bool:
 
 
 def max(input: list[int]) -> int:
+    """Biggest number of the bunch."""
     if len(input) == 0:
         raise ValueError("max() arg is an empty List")
     n = 0
@@ -24,6 +28,7 @@ def max(input: list[int]) -> int:
 
 
 def is_equal(list1: list[int], list2: list[int]) -> bool:
+    """Checks if two lists are equal."""
     if len(list1) != len(list2):
         return False
     n = 0
