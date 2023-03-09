@@ -6,8 +6,8 @@ import random
 
 def main() -> None:
     global points
-    points: int = 0
     global player
+    points: int = 0
     player: str = ""
 
 
