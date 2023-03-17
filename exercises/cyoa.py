@@ -69,8 +69,8 @@ def choice_1() -> None:
         read_time("You choose to lay your head down and go back to sleep.")
         read_time("\"What? No! You must save us!\"")
         read_time("But you just went to sleep.")
-        print(f"You scored {points} points, {player}.")
-        sys.exit("You did not save anything.")
+        print("You did not save anything.")
+        sys.exit(f"You scored {points} points, {player}.")
     if choice == "1":
         points += 1
         read_time("You stand up with great vigor.")
@@ -82,7 +82,7 @@ def choice_1() -> None:
         read_time("Nearby village people look over, confused and concerned.")
         read_time("One person calls out:")
         time.sleep(1)
-        read_time("\"Shut it, old man! You're always going on about some nonsense. Put that down and go work the field.\"")
+        read_time("\"Shut it, old man! You're always going on about some nonsense. Put that thing down and go work the field.\"")
         read_time("You look at the person and quack.")
         time.sleep(1)
         read_time("Because you are a duck.")
@@ -104,7 +104,7 @@ def choice_1() -> None:
     if choice == "2":
         points -= 1
         read_time("You glare at the old man.")
-        read_time("He stumbles back, horrified by the evil in your gaze.")
+        read_time("He stumbles back, horrified by the malice in your gaze.")
         read_time("\"You... you are no hero. You are an evil duck!\"")
         read_time("You rise to your full height, lift your wings, and quack mencaingly at the old man.")
         read_time("He screams in horror as you descend on him, ripping and tearing flesh.")
@@ -165,23 +165,21 @@ def choice_2() -> None:
     input()
 
 
-def choice_3() -> None:
-    global points
-    global player
+def choice_3(point_count, name) -> int:
     print("~~~ Chapter Three ~~~")
     time.sleep(3)
     read_time("After a lengthy flight, you find a wide field covered in silvery grass.")
     read_time("It is the field from your dream.")
     read_time("A dark figure stands in the middle, watching as you land in front of him.")
     read_time("You can't see his face beneath his black hood, but he speaks to you in a cold voice.")
-    read_time(f"\"You have come, {player}. That's unfortunate, because I'm going to destroy everyone and everything, starting with you.\"")
+    read_time(f"\"You have come, {name}. Fine, then. I will destroy everyone and everything, starting with you.\"")
     read_time("\"It's duck season!\"")
     time.sleep(1)
     read_time("You want to tell him that it's rabbit season, but you can only quack.")
     read_time("The final confrontation is upon you. What will you do?")
     choice = ""
     while choice != "1" and choice != "2" and choice != "3":
-        if points == 2:
+        if point_count == 2:
             print("Reason with the figure (1), attack the figure (2), join forces with the figure (3), offer the bread (4)")
         else:
             print("Reason with the figure (1), attack the figure (2), join forces with the figure (3).")
@@ -190,8 +188,8 @@ def choice_3() -> None:
             read_time("You try to reason with the figure.")
             read_time("But he won't listen.")
             choice = ""
-        if choice == "4" and points == 2:
-            points += 1
+        if choice == "4" and point_count == 2:
+            point_count += 1
             read_time("You drop your bread on the floor.")
             read_time("The bad guy sees the bread and leaps toward it with great speed.")
             read_time("In his haste, his hood flies off to reveal-")
@@ -208,15 +206,15 @@ def choice_3() -> None:
             read_time("\"I... I don't want to do this anymore. Perhaps with a therapist like you, I don't need to destroy everything.\"")
             read_time("He sits down. You place a wing on his shoulder. Everything is ok now.")
             time.sleep(2)
-            print(f"You scored {points} points, {player}.")
-            sys.exit("You saved everything without conflict. Good job!")
+            print("You saved everything without conflict. Good job!")
+            return point_count
         if choice == "2":
             read_time("You fly at the figure's head.")
             read_time("But he grabs you out of the air and kneels on your chest.")
             read_time("\"You are but a simple duck, fool. You cannot fight me.\"")
-            points += 1
+            point_count += 1
             effort = 0
-            while effort < 3:
+            while effort < 2:
                 read_time("The bad guy is choking you. It's life or death. What will you do?")
                 choice_sub = ""
                 while choice_sub != "1" and choice_sub != "2":
@@ -234,17 +232,17 @@ def choice_3() -> None:
                         time.sleep(2)
                         read_time("You die.")
                         time.sleep(2)
-                        print(f"You scored {points} points, {player}.")
-                        sys.exit("You made a valiant effort, but did not save anything.")
+                        print("You made a valiant effort, but did not save anything.")
+                        return point_count
             read_time("You fight with all your strength and feel the bad guy lift up a little bit.")
             read_time("But he snarls and comes crashing back down on you.")
-            points += 1
+            point_count += 1
             print("What will you do?")
             print("Fight! (1) or fight! (2)")
             input()
             read_time("With a quack of strength and defiance, you throw the bad guy off you.")
             read_time("He sails twenty feet before crashing back to the ground.")
-            if points > 2:
+            if point_count > 2:
                 read_time("You can defeat him.")
                 read_time("You are the hero.")
             else:
@@ -259,8 +257,8 @@ def choice_3() -> None:
             time.sleep(2)
             read_time("The battle is over. You won.")
             time.sleep(2)
-            print(f"You scored {points} points, {player}.")
-            sys.exit("You saved everything. Well done!")
+            print("You saved everything. Well done!")
+            return point_count
         if choice == "3":
             read_time("You offer to join forces with the bad guy.")
             read_time("\"You would join me? The great hero?\"")
@@ -270,8 +268,8 @@ def choice_3() -> None:
             read_time("Unfortunately, that includes you and the bad guy.")
             read_time("You both die.")
             time.sleep(1)
-            print(f"You scored {points} points, {player}.")
-            sys.exit("You destroyed everyone and everything. Shame on you.")
+            print("You destroyed everyone and everything. Shame on you.")
+            return point_count
 
 
 if __name__ == "__main__":
@@ -279,7 +277,7 @@ if __name__ == "__main__":
         main()
         choice_1()
         choice_2()
-        choice_3()
+        print(f"You scored {choice_3(points, player)} points, {player}.")
         again = ""
         while again != "1" and again != "2":
             print("Do you want to play again? Yes (1) or no (2).")
