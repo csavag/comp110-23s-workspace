@@ -1,7 +1,6 @@
 """EX06- Choose your own adventure."""
 __author__ = "730552002"
 import time 
-import random
 import sys
 global points
 points: int = 0
@@ -12,14 +11,12 @@ playing: bool = True
 
 
 def main() -> None:
+    """Whatever."""
     greet()
-    #global points
-    #global player
-    #points: int = 0
-    #player: str = ""
 
 
 def read_time(sentence):
+    """Delays printing of the next line based on average reading time."""
     print(sentence)
     lstt = sentence.split()
     time_count = 0
@@ -32,10 +29,11 @@ def read_time(sentence):
         time_count += 1
     if time_count < 2:
         time_count += 1.5
-    time.sleep(time_count/3)
+    time.sleep(time_count / 3)
 
 
 def greet() -> None:
+    """Introduction to world."""
     global player
     print("~~~ Chapter One ~~~")
     time.sleep(3)
@@ -59,6 +57,7 @@ def greet() -> None:
 
 
 def choice_1() -> None:
+    """First choice- old man."""
     choice = ""
     global points
     global player
@@ -118,6 +117,7 @@ def choice_1() -> None:
 
 
 def choice_2() -> None:
+    """Second choice- child."""
     global points
     print("~~~ Chapter Two ~~~")
     time.sleep(3)
@@ -166,6 +166,7 @@ def choice_2() -> None:
 
 
 def choice_3(point_count, name) -> int:
+    """Final confrontation- very dramatic."""
     print("~~~ Chapter Three ~~~")
     time.sleep(3)
     read_time("After a lengthy flight, you find a wide field covered in silvery grass.")
