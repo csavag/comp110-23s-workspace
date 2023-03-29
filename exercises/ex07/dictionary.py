@@ -1,7 +1,9 @@
 """A file named dictionary.py."""
 __author__ = "730552002"
 
+
 def invert(input_dict: dict[str, str]) -> dict[str, str]:
+    """Inverts."""
     i = 0
     return_dict: dict = {}
     while i < len(input_dict):
@@ -11,11 +13,9 @@ def invert(input_dict: dict[str, str]) -> dict[str, str]:
         i += 1
     return return_dict
 
-x = {"key": "value", "key2": "values"}
-print(list(x))
-print(invert(x))
 
 def favorite_color(input_dict: dict[str, str]) -> str:
+    """Colors."""
     new_dict = {}
     for item in input_dict:
         if input_dict[item] in new_dict:
@@ -30,9 +30,9 @@ def favorite_color(input_dict: dict[str, str]) -> str:
             value = each
     return value
 
-print(favorite_color({"Marc": "yellow", "Ezri": "blue", "Kris": "blue"}))
 
 def count(input_list: list[str]) -> dict[str, int]:
+    """Count bleck."""
     return_dict = {}
     for item in input_list:
         if item in return_dict:
@@ -46,7 +46,3 @@ def count(input_list: list[str]) -> dict[str, int]:
             highest = return_dict[item]
             value = item
     return value
-
-print(count(["s", "s", "a", "b"]))
-for i in range(5):
-    print(i)
