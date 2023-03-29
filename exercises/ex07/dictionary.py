@@ -32,7 +32,7 @@ def favorite_color(input_dict: dict[str, str]) -> str:
 
 
 def count(input_list: list[str]) -> dict[str, int]:
-    """Count bleck."""
+    """Count bleck!"""
     return_dict = {}
     for item in input_list:
         if item in return_dict:

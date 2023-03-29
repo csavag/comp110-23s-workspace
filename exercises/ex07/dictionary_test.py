@@ -12,7 +12,7 @@ def test_edge() -> None:
 
 def test_norm() -> None:
     """Use case for invert."""
-    assert invert({1:2, "a": 3}) == {2: 1, 3: "a"}
+    assert invert({1: 2, "a": 3}) == {2: 1, 3: "a"}
 
 
 def test_again() -> None:
@@ -22,12 +22,12 @@ def test_again() -> None:
 
 def test_fav() -> None:
     """Whee."""
-    assert favorite_color({"dan": "hat","0112": "red-tailed hawk","hemeny": "hat"}) == "hat"
+    assert favorite_color({"dan": "hat", "0112": "red-tailed hawk", "hemeny": "hat"}) == "hat"
 
 
 def test_favnorm() -> None:
     """aiohv."""
-    assert favorite_color({"Sheryl": "blue", "Waltuh": "blue","Wade": "red","Minerva": "red"}) == "blue"
+    assert favorite_color({"Sheryl": "blue", "Waltuh": "blue", "Wade": "red", "Minerva": "red"}) == "blue"
 
 
 def test_favthree() -> None:
@@ -47,4 +47,4 @@ def test_wank() -> None:
 
 def test_agained() -> None:
     """Last!"""
-    assert count(["pop", "pop", "pop", "muzik"]) == {"pop": 3,"muzik": 1}
+    assert count(["pop", "pop", "pop", "muzik"]) == {"pop": 3, "muzik": 1}
