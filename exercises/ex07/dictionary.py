@@ -46,3 +46,5 @@ def count(input_list: list[str]) -> dict[str, int]:
             highest = return_dict[item]
             value = item
     return value
+
+print(count(["hee", "hee", "michael", "jackson"]))
