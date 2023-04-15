@@ -37,6 +37,11 @@ class Point:
         else:
             raise IndexError
     
+    def __add__(self, num: float) -> Point:
+        """Overloads addition"""
+        new: Point = Point(self.x + num, self.y + num)
+        return new
+
 a: Point = Point(1.0, 2.0)
 #b: Point = a.scale(3.0)
 b: Point = a * 3.0
